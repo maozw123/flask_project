@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block tltle%}
+    首页
+{% endblock %}
+
+{% block label%}首页{% endblock %}
+
+{% block content%}
+    {% for i in curr_list %}
+        <p>{{i.c_name}}</p>
+    {% endfor %}
+{% endblock %}

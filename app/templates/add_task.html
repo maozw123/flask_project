@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block tltle%}
+    教学任务发布
+{% endblock %}
+
+{% block label%}教学任务发布{% endblock %}
+
+{% block content%}
+    <!--循环所有-->
+    <form method="post">
+        <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}">
+        {% for t in task %}
+            <p>{{ t }}</p>
+        {% endfor %}
+        <input class="btn btn-danger btn-block" type="submit" value="提交" class="btn btn-danger btn-block">
+
+    </form>
+{% endblock %}

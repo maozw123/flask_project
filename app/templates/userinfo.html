@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block tltle%}
+    个人中心
+{% endblock %}
+
+{% block label%}个人中心{% endblock %}
+
+{% block content%}
+    <!-- 个人详情 -->
+    <div class="row">
+        <div class="col-lg-12">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">个人详情</h6>
+            </div>
+            <div class="card-body">
+                <table class="table" >
+                    <tr>
+                        <td rowspan="3">
+                            <img style="width: 150px;height: 150px" src="/static/img/timg.jpg">
+                        </td>
+                        <th>姓名</th>
+                        <td>毛志文</td>
+                        <th>性别</th>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>18</td>
+                        <th>身份</th>
+                        <td>学生</td>
+                    </tr>
+                    <tr>
+                        <th>学科</th>
+                        <td>python</td>
+                        <th>班级</th>
+                        <td>python0701班</td>
+                    </tr>
+                    <tr>
+                        <th>联系方式</th>
+                        <td>136109566823</td>
+                        <th>家庭住址</th>
+                        <td colspan="2">河南省周口市沈丘县</td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--课程表-->
+    <div class="row">
+            <div class="col-lg-12">
+              <!-- Circle Buttons -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">课程表</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr align="center">
+                            <th>周一</th>
+                            <th>周二</th>
+                            <th>周三</th>
+                            <th>周四</th>
+                            <th>周五</th>
+                            <th>周六</th>
+                            <th>周日</th>
+                        </tr>
+                        {% for w in calender%}
+                            <tr align="center">
+                                {% for d in w%}
+                                    <td>{{d}}</td>
+<!--                                    <td>{{d.split("-").0}}</td>-->
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
+{% endblock %}
